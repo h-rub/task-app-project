@@ -1,7 +1,6 @@
 from django.db import models
 from authentication.models import CustomUser
 
-
 # Create your models here.
 class Priority(models.Model):
     name = models.CharField(max_length=100)
@@ -14,7 +13,7 @@ class Task(models.Model):
     title = models.CharField(max_length=150, null=False)
     description = models.TextField(null=True, blank=True)
     is_completed = models.BooleanField(default=False)
-    priority = models.ForeignKey(Priority, on_delete=models.DO_NOTHING)
+    priority = models.ForeignKey(Priority, on_delete=models.PROTECT)
 
     def __str__(self):
         return f"{self.title} {self.user}"
