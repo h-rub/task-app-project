@@ -3,6 +3,13 @@ from authentication.models import CustomUser
 
 # Create your models here.
 class Priority(models.Model):
+    """
+        Modelo para Catálogo de Prioridades.
+
+        1: Baja
+        2: Media
+        3: Alta
+    """
     name = models.CharField(max_length=100)
 
     def __str__(self):

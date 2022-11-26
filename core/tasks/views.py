@@ -8,6 +8,9 @@ from .serializers import TaskSerializer
 
 # Create your views here.
 class GetAllTasksView(generics.ListAPIView):
+    """
+        Esta vista nos retorna todas las tareas registradas. Sin filtro.
+    """
     queryset = Task.objects.all()
     serializer_class = TaskSerializer
 
